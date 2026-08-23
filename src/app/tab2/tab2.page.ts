@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { 
+import { Component, OnInit, inject } from '@angular/core';
+import {
   IonHeader,
   IonToolbar,
   IonTitle,
@@ -11,25 +11,26 @@ import {
   IonFabButton,
   IonIcon,
 } from '@ionic/angular';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { addIcons } from 'ionicons';
-import { camera, images } from 'ionicons/icons';
-import { PhotoService} from '../services/photo.service';
-import { Photo } from '@capacitor/camera';
+import { camera } from 'ionicons/icons';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonFab, IonFabButton, IonIcon]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonFab, IonFabButton, IonIcon],
 })
+export class Tab2Page implements OnInit {
+  public photoService = inject(PhotoService);
 
-export class Tab2Page {
+  constructor() {
+    addIcons({ camera });
+  }
 
-  // Inyectamos el servicio directamente en el constructor usando 'public'
-  constructor(public photoService: PhotoService) {
-    // Registramos los iconos para que Ionic los muestre correctamente
-    addIcons({ camera, images });
+  // CAMBIO: Añadir la llamada a `loadSaved()` al navegar a la pestaña de fotos
+  async ngOnInit() {
+    await this.photoService.loadSaved();
   }
 
   addPhotoToGallery() {
