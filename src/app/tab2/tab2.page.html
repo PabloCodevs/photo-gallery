@@ -13,6 +13,18 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Añadir cuadrícula para mostrar las fotos -->
+  <ion-grid>
+    <ion-row>
+      <!-- Crea una nueva columna y una imagen por cada foto -->
+       @for (photo of photoService.photos(); track photo.filepath; let position = $index) {
+        <ion-col size="6">
+          <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy" />
+        </ion-col>
+       }
+    </ion-row>
+  </ion-grid>
+
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <!-- click Event listener -->
     <ion-fab-button (click)="addPhotoToGallery()">
