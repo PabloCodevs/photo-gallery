@@ -40,6 +40,13 @@ Cada vez que modifiques el código y quieras pasarlo al entorno nativo:
    ```bash
    ionic cap open ios / android
    ```
+---
+## Imágenes del proyecto
+<img width="448" height="825" alt="image" src="https://github.com/user-attachments/assets/c642280e-fcad-48c7-9f02-fa15b62c1b09" />
+<img width="449" height="817" alt="image" src="https://github.com/user-attachments/assets/6a41a4d6-9054-45f3-9033-87461946c39d" />
+<img width="448" height="822" alt="image" src="https://github.com/user-attachments/assets/bd0e9dfc-98a5-4ab8-8bc4-b1408dd4e18f" />
+<img width="448" height="767" alt="image" src="https://github.com/user-attachments/assets/9d5d71e2-192a-4df8-8428-4dee4519bbd8" />
+
 
 ---
 ## Licencia
