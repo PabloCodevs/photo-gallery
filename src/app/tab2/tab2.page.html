@@ -19,7 +19,10 @@
       <!-- Crea una nueva columna y una imagen por cada foto -->
        @for (photo of photoService.photos(); track photo.filepath; let position = $index) {
         <ion-col size="6">
+          <!-- Convierte la imagen en botón y se añade un click -->
+          <button (click)="showActionSheet(photo, position)">
           <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy" />
+          </button>
         </ion-col>
        }
     </ion-row>

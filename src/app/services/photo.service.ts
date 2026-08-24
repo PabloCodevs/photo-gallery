@@ -117,6 +117,26 @@ export class PhotoService {
     // Actualizar la señal para que la vista de la galería se refresque
     this.photos.set(photos);
   }
+
+  // Eliminar imagenes
+  public async deletePhoto(photo: UserPhoto, position: number){
+    // Eliminar esta foto de la lista reactiva de fotos
+    this.photos.update((photos) => photos.filter((_, index) => index !== position));
+
+    // Actualiza la caché del array de fotos sobreescribiendo el array existente
+    Preferences.set({
+      key: this.PHOTO_STORAGE,
+      value: JSON.stringify(this.photos()),
+    }) 
+
+    // Elimina la imagen del sistema de archivos
+    const filename = photo.filepath.slice(photo.filepath.lastIndexOf('/')+1);
+
+    await Filesystem.deleteFile({
+      path: filename,
+      directory: Directory.Data,
+    });
+  }
 }
 
 export interface UserPhoto {
