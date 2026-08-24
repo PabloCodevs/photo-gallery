@@ -1,6 +1,6 @@
 # Photo Gallery App (Ionic + Capacitor)
 
-Aplicación móvil y web multiplataforma desarrollada con **Ionic**, **Angular** y **Capacitor**, creada paso a paso para aprender el flujo de desarrollo nativo y web.
+Aplicación móvil y web multiplataforma desarrollada con **Ionic**, **Angular** y **Capacitor**, creada paso a paso para aprender el flujo de desarrollo nativo y web basado en el [tutorial Ionic/Angular](https://ionicframework.com/docs/angular/your-first-app).
 
 ---
 
