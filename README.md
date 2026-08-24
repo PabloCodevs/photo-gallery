@@ -42,7 +42,7 @@ Cada vez que modifiques el código y quieras pasarlo al entorno nativo:
    ```
 
 ---
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
